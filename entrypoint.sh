@@ -1,5 +1,7 @@
-#!/bin/sh -l
+#!/bin/bash
+set -u
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+echo "::set-output name=release-url::http://example.com"
+
+exit 0
+

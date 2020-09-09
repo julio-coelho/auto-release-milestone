@@ -1,15 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+name: 'Auto Release Milestone'
+description: 'Drafts a GitHub release based on a newly closed milestone.'
+author: 'Julio Coelho'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  release-url:
+    description: 'The URL of the GitHub release that was drafted'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+branding:
+  color: red
+  icon: tag
