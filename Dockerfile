@@ -9,6 +9,9 @@ LABEL repository="https://github.com/julio-coelho/auto-release-milestone.git"
 LABEL maintainer="Julio Coelho"
 
 RUN apt-get update && apt-get install -y jq
+RUN dotnet tool install -g GitReleaseManager.Tool
+
+ENV PATH /root/.dotnet/tools:$PATH
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
